@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<malloc.h>
 #include<string.h>
-#define maxsize 26 //´Ë´¦×Ö·ûÖ»ÓĞ26ÖÖ£¬´´½¨Ò»¸ö26³¤¶ÈµÄ¹şÏ£±í¼´¿É£» 
+#define maxsize 26 
 
 typedef struct hush_node
 {
@@ -24,11 +24,11 @@ hush_node* init_hush()
 	return hush;
 }
 
-// ¿´ ×Ö·ûs ¶ÔÓ¦µÄ¹şÏ£±íµÄ¼üÖµ¶ÔÊÇ·ñÔÚÇ°ÃæÒÑ¾­ÕÒµ½£» 
+// çœ‹ å­—ç¬¦s å¯¹åº”çš„å“ˆå¸Œè¡¨çš„é”®å€¼å¯¹æ˜¯å¦åœ¨å‰é¢å·²ç»æ‰¾åˆ°ï¼› 
 int find_this_key(char s,hush_node* hush)
 {
 	int index = s - 'a' ;
-	if(hush[index].key == '0') // ´ËÊ±ÊÇµÚÒ»´Î³öÏÖ×Ö·ûs 
+	if(hush[index].key == '0') // æ­¤æ—¶æ˜¯ç¬¬ä¸€æ¬¡å‡ºç°å­—ç¬¦s 
 	{
 		return 0;
 	}
@@ -44,17 +44,17 @@ int firstUniqChar(char * s){
 	int i = 0;
     int pt1 = 0;
     int pt2 = 0;
-    int flag = 0;                    // ÓÃÀ´±êÖ¾ ÓĞÃ»ÓĞÕÒµ½ µÚÒ»¸ö²»ÖØ¸´µÄ×Ö·û£»
+    int flag = 0;                    // ç”¨æ¥æ ‡å¿— æœ‰æ²¡æœ‰æ‰¾åˆ° ç¬¬ä¸€ä¸ªä¸é‡å¤çš„å­—ç¬¦ï¼›
 	int index = -1; 
     hush_node *hush1 = init_hush();
     for(pt1=0;pt1<strlen(s);pt1++)
     {
-    	int index = s[pt1] - 'a';       // ¸Ã×Ö·ûÔÚ hush ±í¶ÔÓ¦¼üÖµ¶ÔµÄÏÂ±êÎ»ÖÃ£»  
-    	if(find_this_key(s[pt1],hush1))  // ÔÚ¹şÏ£ÖĞÕÒµ½Ôò½øÈë£º  
+    	int index = s[pt1] - 'a';       // è¯¥å­—ç¬¦åœ¨ hush è¡¨å¯¹åº”é”®å€¼å¯¹çš„ä¸‹æ ‡ä½ç½®ï¼›  
+    	if(find_this_key(s[pt1],hush1))  // åœ¨å“ˆå¸Œä¸­æ‰¾åˆ°åˆ™è¿›å…¥ï¼š  
     	{
     		hush1[index].value++;
 		}
-		else                            // ¹şÏ£±íÖĞÃ»ÓĞÕÒµ½£¬Ôò½«Æä³õÊ¼»¯£» 
+		else                            // å“ˆå¸Œè¡¨ä¸­æ²¡æœ‰æ‰¾åˆ°ï¼Œåˆ™å°†å…¶åˆå§‹åŒ–ï¼› 
 		{
 			hush1[index].key = s[pt1];
 			hush1[index].flag = pt1;
