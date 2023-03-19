@@ -3,6 +3,7 @@
 #include<string.h>
 #define maxsize 26 
 
+// this is my new commit test
 typedef struct hush_node
 {
 	int flag;
